@@ -1,0 +1,40 @@
+<header class="w-full fixed top-0 z-50">
+    <nav class="max-w-5xl h-18 mx-auto flex text-white justify-between items-center">
+        <div>
+            <img class="w-16" src="/isologo_vg.svg" alt="logo">
+        </div>
+        <div>
+            <ul class="flex">
+                <li class="mx-4"><a class="hover:text-primary transition-all" href="">Inicio</a></li>
+                <li class="mx-4"><a class="hover:text-primary transition-all" href="">Especialidades</a></li>
+                <li class="mx-4"><a class="hover:text-primary transition-all" href="">Carteleria</a></li>
+                <li class="mx-4"><a class="hover:text-primary transition-all" href="">Productos</a></li>
+                <li class="mx-4"><a class="hover:text-primary transition-all" href="">Nosotros</a></li>
+            </ul>
+        </div>
+        <div>
+            <button class="px-8 py-2 rounded-sm border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">Contactanos</button>
+        </div>
+    </nav>
+</header>
+
+
+<style>
+    header{
+        background: transparent;
+        animation: header-blur-scroll 0.3s linear both;
+        animation-timeline: scroll();
+        animatio-range: 0px 100px;
+    }
+    @keyframes header-blur-scroll {
+        0%{
+            backdrop-filter: blur(0px);
+            background: transparent;
+        }
+        100%{
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.3);
+            padding-bottom: var(--spacing-6);
+        }
+    }
+</style>
