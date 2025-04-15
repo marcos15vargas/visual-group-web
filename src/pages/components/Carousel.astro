@@ -1,0 +1,44 @@
+---
+const slider = [
+    {
+        id: 1,
+        img: 'https://caracter360.com/wp-content/uploads/carwrapping.jpg',
+        title: 'Ploteo Vehicular',
+        subtitle: 'Transformamos tu vehículo en una herramienta publicitaria impactante y duradera.',
+    },
+    {
+        id: 2,
+        img: 'https://caracter360.com/wp-content/uploads/carwrapping.jpg',
+        title: 'Publicita tu Neogocio',
+        subtitle: 'Hacemos que tu negocio se vea profesional desde el primer vistazo.',
+    },
+    {
+        id: 3,
+        img: 'https://caracter360.com/wp-content/uploads/carwrapping.jpg',
+        title: 'Diseño Gráfico',
+        subtitle: 'Creamos diseños únicos y atractivos que capturan la atención de tu audiencia.',
+    },
+]
+---
+
+<div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-[200px] overflow-hidden rounded-lg md:h-[300px] lg:h-[350px]">
+        {slider.map((item) => (
+            <div class="hidden duration-700 ease-in-out " data-carousel-item>
+                <img src={item.img} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-xl" alt="...">
+                <div class="absolute z-100 text-white bottom-5 left-6">
+                    <h1 class="font-bold text-lg md:text-2xl">{item.title}</h1>
+                    <p class="mr-2 text-xs md:text-lg leading-5">{item.subtitle}</p>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-b from-transparent via-transparent to-secondary"></div>
+            </div>
+        ))}
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-[-20px] left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+    </div>
+</div>

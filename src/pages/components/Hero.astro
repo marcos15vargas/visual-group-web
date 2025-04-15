@@ -1,14 +1,18 @@
-<section class="hero text-white relative">
+---
+import Carousel from "./Carousel.astro";
+---
+
+<section class="hero text-white relative ">
     <div class="back overflow-hidden">
         <div class="h-18"></div>
-        <div class="mx-auto text-center mt-12">
-            <h1 class="text-5xl font-bold">Calidad Gráfica <br> Para Destacar Tu Marca.</h1>
-            <h3 class="mt-4">Desde tarjetas personales hasta gigantografias. Imprimimos con precision y estilo.</h3>
-            <h3>Nos encargamos que tu marca se vea profesional desde el primer vistazo.</h3>
+        <div class="mx-auto text-center mt-18 px-4">
+            <h1 class="text-3xl sm:text-5xl font-bold">Calidad Gráfica <br> Para Destacar Tu Marca.</h1>
+            <h3 class="mt-4 text-sm md:text-lg">Desde tarjetas personales hasta gigantografias. Imprimimos con precision y estilo.</h3>
+            <h3 class="text-sm md:text-lg">Nos encargamos que tu marca se vea profesional desde el primer vistazo.</h3>
         </div>
     </div>
-    <div class="carrusel absolute w-xl h-64 mx-auto mt-[-200px] z-[50] border rounded-md overflow-hidden">
-        <img class="w-full cover" src="https://caracter360.com/wp-content/uploads/carwrapping.jpg" alt="">
+    <div class="carrusel absolute w-[80%] sm:w-[60%] lg:w-[40%] mx-auto mt-[-250px] z-[50] rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+        <Carousel/>
     </div>
 </section>
 
@@ -20,8 +24,10 @@
     .back{
         position: relative;
         background-image: url(../../../public/hero/fondo.png);
-        background-color: #013c49;
-        height: 90vh;
+        background-color: #00313C;
+        height: 600px;
+        background-size: cover;
+        background-position: center;
     }
     .back::before {
         content: '';
@@ -36,7 +42,7 @@
         z-index: 2;
     }
     .carrusel {
-  left: 50%;
-  transform: translateX(-50%);
-}
+        left: 50%;
+        transform: translateX(-50%);
+    }
 </style>
