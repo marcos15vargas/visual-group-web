@@ -1,23 +1,97 @@
 <header class="w-full fixed top-0 z-150">
     <nav class="max-w-5xl h-18 mx-auto flex text-white justify-between items-center">
-        <div>
+        <div class="ml-4 md:ml-0">
             <img class="w-16" src="/isologo_vg.svg" alt="logo">
         </div>
-        <div>
-            <ul class="flex">
-                <li class="mx-4"><a class="hover:text-primary transition-all" href="">Inicio</a></li>
-                <li class="mx-4"><a class="hover:text-primary transition-all" href="">Especialidades</a></li>
-                <li class="mx-4"><a class="hover:text-primary transition-all" href="">Carteleria</a></li>
-                <li class="mx-4"><a class="hover:text-primary transition-all" href="">Productos</a></li>
-                <li class="mx-4"><a class="hover:text-primary transition-all" href="">Nosotros</a></li>
-            </ul>
-        </div>
-        <div>
-            <button class="px-8 py-2 rounded-sm border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">Contactanos</button>
+        <!-- navbar desktop -->
+            <div class="hidden lg:flex">
+                <ul class="flex">
+                    <li class="mx-4"><a class="hover:text-primary transition-all" href="">Inicio</a></li>
+                    <li class="mx-4"><a class="hover:text-primary transition-all" href="">Especialidades</a></li>
+                    <li class="mx-4"><a class="hover:text-primary transition-all" href="">Carteleria</a></li>
+                    <li class="mx-4"><a class="hover:text-primary transition-all" href="">Productos</a></li>
+                    <li class="mx-4"><a class="hover:text-primary transition-all" href="">Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="hidden lg:flex">
+                <button class="px-8 py-2 rounded-sm border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">Contactanos</button>
+            </div>
+
+        <!-- navbar mobile -->
+        <div class="lg:hidden mx-8 flex items-center" >
+            <a href="#" class="" id="menu-open-button">
+                <svg
+                class="size-8 text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+                >
+                    <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 1h15M1 7h15M1 13h15"></path>
+                </svg>
+            </a>
+            <a href="#" class="hidden" id="menu-close-button">
+                <svg  xmlns="http://www.w3.org/2000/svg"
+                class="size-10 text-white font-bold"
+                viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="3"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+            </a>
         </div>
     </nav>
+    <div id="menu-open" class="w-full hidden border-b-4 border-b-primary mt-[-20px]">
+        <div class="pt-10 px-8 font-bold text-xl text-white flex flex-col pb-6">
+            <ul class="my-2">
+                <li><a class="hover:text-primary " href="#">Inicio</a></li>
+            </ul>
+            <ul class="my-2">
+                <li><a class="hover:text-primary " href="#">Especialidades</a></li>
+            </ul>
+            <ul class="my-2">
+                <li><a class="hover:text-primary " href="#">Carteleria</a></li>
+            </ul>
+            <ul class="my-2">
+                <li><a class="hover:text-primary " href="#">Productos</a></li>
+            </ul>
+            <ul class="my-2">
+                <li><a class="hover:text-primary " href="#">Nosotros</a></li>
+            </ul>
+            <ul class="my-4 text-center">
+                <li><a class="px-8 py-2 rounded-sm border-2 border-primary text-white bg-primary hover:text-primary hover:bg-white transition-all" href="#">Contactanos</a></li>
+            </ul>
+        </div>
+    </div>
 </header>
 
+<script>
+    const buttonOpen = document.querySelector('#menu-open-button') as Element;
+    const buttonClose = document.querySelector('#menu-close-button') as Element;
+    const menuOpen = document.querySelector("#menu-open") as Element;
+    // const link = document.querySelector(".link") as Element;    
+    
+    buttonOpen?.addEventListener("click", (e) => {
+        e.preventDefault();
+        menuOpen.classList.toggle("hidden");
+        buttonClose.classList.toggle("hidden");
+        buttonOpen.classList.toggle("hidden");
+    });
+    buttonClose?.addEventListener("click", (e) => {
+        e.preventDefault();
+        menuOpen.classList.toggle("hidden");
+        buttonClose.classList.toggle("hidden");
+        buttonOpen.classList.toggle("hidden");
+    });
+    
+    menuOpen?.addEventListener("click", () => {
+        menuOpen.classList.toggle("hidden");
+        buttonClose.classList.toggle("hidden");
+        buttonOpen.classList.toggle("hidden");
+    });
+    
+    </script>
 
 <style>
     header{
