@@ -70,36 +70,36 @@
     const buttonOpen = document.querySelector('#menu-open-button') as Element;
     const buttonClose = document.querySelector('#menu-close-button') as Element;
     const menuOpen = document.querySelector("#menu-open") as Element;
-    // const link = document.querySelector(".link") as Element;    
-    
+
     buttonOpen?.addEventListener("click", (e) => {
         e.preventDefault();
         menuOpen.classList.toggle("hidden");
         buttonClose.classList.toggle("hidden");
         buttonOpen.classList.toggle("hidden");
     });
+
     buttonClose?.addEventListener("click", (e) => {
         e.preventDefault();
         menuOpen.classList.toggle("hidden");
         buttonClose.classList.toggle("hidden");
         buttonOpen.classList.toggle("hidden");
     });
-    
+
     menuOpen?.addEventListener("click", () => {
         menuOpen.classList.toggle("hidden");
         buttonClose.classList.toggle("hidden");
         buttonOpen.classList.toggle("hidden");
     });
-    
-    </script>
+</script>
 
 <style>
     header{
         background: transparent;
         animation: header-blur-scroll 0.3s linear both;
         animation-timeline: scroll();
-        animatio-range: 0px 100px;
+        animation-range: 0px 250px;
     }
+ 
     @keyframes header-blur-scroll {
         0%{
             backdrop-filter: blur(0px);
@@ -109,6 +109,14 @@
             backdrop-filter: blur(10px);
             background: rgba(0, 0, 0, 0.3);
             padding-bottom: var(--spacing-6);
+        }
+    }
+    @media (max-width: 600px){ 
+        header{
+            background: transparent;
+            animation: header-blur-scroll 0.3s linear both;
+            animation-timeline: scroll();
+            animation-range: 0px 0px;
         }
     }
 </style>
