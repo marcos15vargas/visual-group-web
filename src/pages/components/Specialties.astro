@@ -1,0 +1,68 @@
+---
+import ButtonModal from "./modal/ButtonModal.astro";
+import Modal from "./modal/modal.astro";
+
+const dataModal = [
+  {
+    id: "large-modal",
+    title: "Ploteo Vehicular",
+    image: "https://caracter360.com/wp-content/uploads/carwrapping.jpg",
+    subtitle: "Transformamos tu vehículo en una herramienta publicitaria impactante y duradera.",
+    description: "En movimiento o estacionado, tu vehículo puede ser el mejor embajador de tu marca. En Visual Group, diseñamos e instalamos ploteos vehiculares de alto impacto, con materiales de primera calidad y acabados profesionales. Desde autos particulares hasta flotas empresariales, transformamos cada superficie en una oportunidad de venta.",
+    span: "¡Hacé que tu marca viaje con vos!",
+  },
+  {
+    id: "large-modal",
+    title: "Ploteo Vehicular",
+    image: "https://caracter360.com/wp-content/uploads/carwrapping.jpg",
+    subtitle: "Transformamos tu vehículo en una herramienta publicitaria impactante y duradera.",
+    description: "En movimiento o estacionado, tu vehículo puede ser el mejor embajador de tu marca. En Visual Group, diseñamos e instalamos ploteos vehiculares de alto impacto, con materiales de primera calidad y acabados profesionales. Desde autos particulares hasta flotas empresariales, transformamos cada superficie en una oportunidad de venta.",
+    span: "¡Hacé que tu marca viaje con vos!",
+  },
+  {
+    id: "large-modal",
+    title: "Ploteo Vehicular",
+    image: "https://caracter360.com/wp-content/uploads/carwrapping.jpg",
+    subtitle: "Transformamos tu vehículo en una herramienta publicitaria impactante y duradera.",
+    description: "En movimiento o estacionado, tu vehículo puede ser el mejor embajador de tu marca. En Visual Group, diseñamos e instalamos ploteos vehiculares de alto impacto, con materiales de primera calidad y acabados profesionales. Desde autos particulares hasta flotas empresariales, transformamos cada superficie en una oportunidad de venta.",
+    span: "¡Hacé que tu marca viaje con vos!",
+  },
+  {
+    id: "large-modal",
+    title: "Ploteo Vehicular",
+    image: "https://caracter360.com/wp-content/uploads/carwrapping.jpg",
+    subtitle: "Transformamos tu vehículo en una herramienta publicitaria impactante y duradera.",
+    description: "En movimiento o estacionado, tu vehículo puede ser el mejor embajador de tu marca. En Visual Group, diseñamos e instalamos ploteos vehiculares de alto impacto, con materiales de primera calidad y acabados profesionales. Desde autos particulares hasta flotas empresariales, transformamos cada superficie en una oportunidad de venta.",
+    span: "¡Hacé que tu marca viaje con vos!",
+  },
+];
+
+---
+
+<section class="w-full mt-12">
+    <div class="bg-fondo">
+      <svg class="h-24 mb-[-1px]  w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path class="text-secondary fill-current" fill-opacity="0.99"
+              d="M0,288L60,245.3C120,203,240,117,360,112C480,107,600,181,720,229.3C840,277,960,299,1080,256C1200,213,1320,107,1380,53.3L1440,0L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+      </svg>
+    </div>
+    <main class="bg-secondary py-12 w-full z-10 border-b-4 border-secondary">
+      <h2 class="text-center text-4xl underline ">Nuestras Especialidades</h2>
+      <div class= "max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-6 mt-12">
+        {
+          dataModal.map((item) =>(
+            <ButtonModal id={item.id} title={item.title} image={item.image} />
+
+            <Modal id={item.id} title={item.title} image={item.image} subtitle={item.subtitle} description={item.description} span={item.span} />
+          ))
+        }
+
+      </div>
+    </main>
+    <div class="bg-fondo border-t-4 border-secondary">
+      <svg class="h-24 w-full scale-y-[-1] scale-x-[-1] " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path class="text-secondary fill-current" fill-opacity="0.99"
+              d="M0,288L60,245.3C120,203,240,117,360,112C480,107,600,181,720,229.3C840,277,960,299,1080,256C1200,213,1320,107,1380,53.3L1440,0L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+      </svg>
+    </div>
+</section>
