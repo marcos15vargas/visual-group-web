@@ -1,0 +1,131 @@
+---
+import Card from "./card/Card.astro";
+
+const products = [
+    { 
+        id: "1",
+        title: "Ploteo Vehicular",
+        subtitle: "Transformamos tu vehículo...",
+        image: "https://caracter360.com/wp-content/uploads/carwrapping.jpg",
+        option: 1
+    },
+    { 
+        id: "1",
+        title: "Ploteo Vehicular",
+        subtitle: "Transformamos tu vehículo...",
+        image: "https://caracter360.com/wp-content/uploads/carwrapping.jpg",
+        option: 2
+    },
+    { 
+        id: "1",
+        title: "Ploteo Vehicular",
+        subtitle: "Transformamos tu vehículo...",
+        image: "https://caracter360.com/wp-content/uploads/carwrapping.jpg",
+        option: 3
+    },
+    { 
+        id: "1",
+        title: "Ploteo Vehicular",
+        subtitle: "Transformamos tu vehículo...",
+        image: "https://caracter360.com/wp-content/uploads/carwrapping.jpg",
+        option: 1
+    },
+    { 
+        id: "1",
+        title: "Ploteo Vehicular",
+        subtitle: "Transformamos tu vehículo...",
+        image: "https://caracter360.com/wp-content/uploads/carwrapping.jpg",
+        option: 1
+    },
+    { 
+        id: "1",
+        title: "Ploteo Vehicular",
+        subtitle: "Transformamos tu vehículo...",
+        image: "https://caracter360.com/wp-content/uploads/carwrapping.jpg",
+        option: 1
+    },
+];
+
+---
+
+<section class="w-full h-[900px] mt-[-50px]">
+    <div class="back w-full h-full pt-[50px]">
+        <div class="mt-6">
+            <h2 class="text-center text-4xl underline ">Nuestros Productos</h2>
+        </div>
+        <main class=" w-4xl mx-auto mt-4">
+            <!-- opciones -->
+            <div class="mt-2">
+                <ul class="flex flex-wrap w-2xl mx-auto justify-around border-b-4 border-b-primary py-2">
+                    <li><a id="option1" class="active px-8 py-3 cursor-pointer" href="">opcion1</a></li>
+                    <li><a id="option2" class="px-8 py-3 cursor-pointer" href="">opcion2</a></li>
+                    <li><a id="option3" class="px-8 py-3 cursor-pointer" href="">opcion3</a></li>
+                </ul>
+            </div>
+            <!-- card product -->
+            <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+                {
+                    products.map((product) => (
+                        <div class={`card-option card-option-${product.option}`}>
+                            <Card id={product.id} title={product.title} subtitle={product.subtitle} image={product.image} />
+                        </div>
+                    ))
+                }
+            </div>
+        </main>
+    </div>
+</section>
+
+<script>
+    const option1 = document.querySelector('#option1');
+    const option2 = document.querySelector('#option2');
+    const option3 = document.querySelector('#option3');
+    const cards = document.querySelectorAll('.card-option');
+
+    function showCards(option) {
+        cards.forEach(card => {
+            card.style.display = card.classList.contains(`card-option-${option}`) ? 'block' : 'none';
+        });
+    }
+
+    // Mostrar solo la opción 1 al cargar
+    document.addEventListener('DOMContentLoaded', () => {
+        showCards(1);
+    });
+
+    option1?.addEventListener('click', function(e) {
+        e.preventDefault();
+        option1.classList.add('active');
+        option2?.classList.remove('active');
+        option3?.classList.remove('active');
+        showCards(1);
+    });
+    option2?.addEventListener('click', function(e) {
+        e.preventDefault();
+        option1?.classList.remove('active');
+        option2.classList.add('active');
+        option3?.classList.remove('active');
+        showCards(2);
+    });
+    option3?.addEventListener('click', function(e) {
+        e.preventDefault();
+        option1?.classList.remove('active');
+        option2?.classList.remove('active');
+        option3.classList.add('active');
+        showCards(3);
+    });
+</script>
+
+<style>
+    .back{
+        position: relative;
+        background-image: url(../../../public/hero/background-products.svg);
+        background-size:  150% 150%;
+        background-position: left;
+        z-index: 8;
+    }
+    .active{
+        background-color: #009FE3;
+        border-radius: 5px 5px 0 0;
+    }
+</style>
